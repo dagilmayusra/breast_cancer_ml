@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Göğüs Kanser Teşhisi</title>
+</head>
+<body background="static/img04.jpg">
+
+  <div class="container">
+
+    <div class="alert alert-dark mx-auto text-center " style="width: 300px;">
+      Göğüs Kanser Teşhisi
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <div class="card p-3" style="width: 18rem;">
+        <form action="{{ url_for('predict')}}" method="post">
+          <input type="text" name="Clump Thickness" placeholder="Clump Thickness" required="required" />
+          <br>
+          <input type="text" name="Uniformity of Cell Size" placeholder="Uniformity of Cell Size" required="required" />
+          <br>
+          <input type="text" name="Uniformity of Cell Shape" placeholder="Uniformity of Cell Shape" required="required" />
+          <br>
+          <input type="text" name="Marginal Adhesion" placeholder="Marginal Adhesion" required="required" />
+          <br>
+          <input type="text" name="Single Epithelial Cell Size" placeholder="Single Epithelial Cell Size" required="required" />
+          <br>
+          <input type="text" name="Bare Nuclei" placeholder="Bare Nuclei" required="required" />
+          <br>
+          <input type="text" name="Bland Chromatin" placeholder="Bland Chromatin" required="required" />
+          <br>
+          <input type="text" name="Normal Nucleoli" placeholder="Normal Nucleoli" required="required" />
+          <br>
+          <input type="text" name="Mitoses" placeholder="Mitoses" required="required" />
+          <br>
+            <hr />
+          <button type="submit" class="button">Teşhisi Gör</button>
+        </form>
+        <br>
+         <br>
+          <h2 class="output">{{ prediction }}</h2>
+          <a download="static/predict.csv" href="static/predict.csv">{{ d }}</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
