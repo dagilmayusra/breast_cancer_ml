@@ -1,4 +1,4 @@
 # breast_cancer_ml
-Python / Flask kullanarak göğüs kanseri teşhisi yapabilen tek sayfalık bir web uygulaması. Veriler xls olarak indirilebilir.
+A single page web application using Python. Data can be downloaded as xls.
 
 http://goguskanseriapp.herokuapp.com/
